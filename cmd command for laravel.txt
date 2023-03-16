@@ -1,0 +1,19 @@
+php artisan make:migration add_columnname_to_tablename_table --table=tablename  add new column with stated table name
+php artisan make:migration create_tablename_table  add new table to database
+
+composer require laravel/scout for search function in laravel
+php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"  import search package (scout)
+   use Searchable; in post model
+install node js in composer
+npm install
+move css from public/assets/css code in resources/js/app.css
+and link in layout
+
+add listeners 
+php artisan event:generate
+
+install live broadcast using pusher.com
+composer require pusher/pusher-php-server
+
+instal live chat in js 
+npm install laravel-echo pusher-js
