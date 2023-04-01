@@ -76,6 +76,7 @@ private function getSharedData($profile){
        'id' =>$profile->id,
        'avatar' =>$profile->avatar,
        'countposts'=> $profile->posts()->count(),
+       'countTrashedPosts'=> $profile->posts()->onlyTrashed()->count(),
        'countfollowers'=> $profile->followed()->count(),
        'countuserfollowed'=> $profile->followers()->count(),
        'alreadyFollow'=> $existCheck,
@@ -107,6 +108,10 @@ private function getSharedData($profile){
               return response()->json([
                      'theHTML' => view('profile-followed-only', ['followed'=> $profile->followed()->latest()->get()])->render(),
                      'doctitle' => $profile->username."'s Followers"]);}
+
+       public function postTrashRaw (User $profile){
+              return response()->json(['theHTML' => view('profile-post-only', ['posts' => $profile->posts()->onlyTrashed()->latest()->get()])->render(), 'doctitle' => $profile->username . "'s Trashed Notes"]);
+                     }
 
 
 

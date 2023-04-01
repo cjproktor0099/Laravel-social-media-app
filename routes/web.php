@@ -55,6 +55,7 @@ Route::get('/profile/{profile}/followed',[UserController::class,"Followed"])->mi
 //Visit profile using json 
 //User profile main page
 Route::get('/profile/{profile}/raw', [UserController::class, 'ProfileRaw']);
+Route::get('/profile/{profile}/trashed/raw', [UserController::class, 'postTrashRaw'])->name('posts.trashed');
 Route::get('/profile/{profile}/followers/raw', [UserController::class, 'FollowersRaw']);
 Route::get('/profile/{profile}/followed/raw', [UserController::class, 'FollowedRaw']);
 

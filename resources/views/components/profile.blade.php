@@ -27,6 +27,9 @@
           <a href="/profile/{{$sharedData['id']}}" class="profile-nav-link nav-item nav-link {{ Request::segment(3) == "" ? "active" : "" }}" >Posts: {{$sharedData['countposts']}}</a>
           <a href="/profile/{{$sharedData['id']}}/followers" class="profile-nav-link nav-item nav-link {{ Request::segment(3) == "followers" ? "active" : "" }}">Followers: {{$sharedData['countuserfollowed']}}</a>
           <a href="/profile/{{$sharedData['id']}}/followed" class="profile-nav-link nav-item nav-link {{ Request::segment(3) == "followed" ? "active" : "" }}">Following: {{$sharedData['countfollowers']}}</a>
+          @if(auth()->user()->username == $sharedData['username'])
+          <a href="/profile/{{$sharedData['id']}}/trashed" class="profile-nav-link nav-item nav-link {{ Request::segment(3) == "trashed" ? "active" : "" }}">Trashed Notes  {{$sharedData['countTrashedPosts']}}</a>
+          @endif
         </div>
         
      

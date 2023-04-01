@@ -41,7 +41,7 @@ class PostController extends Controller
             //return view('single-post',['post'=>$post])->with('failure','You dont have permission to delete this post');  
         //}
          $post->delete();
-         return redirect('/profile/'. auth()->user()->id)->with('success','Post successfully deleted');
+         return redirect('/profile/'. auth()->user()->id)->with('success','Post move to Trashed');
         //$post_id -> delete();
         //return redirect('/')->with('success','1 Post successfully deleted');
 
