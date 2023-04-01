@@ -88,23 +88,25 @@ private function getSharedData($profile){
        return view('profile-posts',['posts'=> $profile->posts()->get()] );}
  public function Followers (User $profile){
        $this->getSharedData($profile);
-       return view('profile-followers',['followers'=> $profile->followers()->latest()->get()]);}
+       return view('profile-followers',['followers'=> $profile->followers()->latest()->get()]);
+}
  public function Followed (User $profile){
        $this->getSharedData($profile);
        return view('profile-followed',['followed'=> $profile->followed()->latest()->get()]);}
 
+
+       
        public function ProfileRaw (User $profile){
-              return response()->json([
-                     'theHTML' => view('profile-post-only', ['posts'=> $profile->posts()->latest()->get()])->render(),
-                     'docTitle' => $profile->fullname."'s Profile"]);}
+              return response()->json(['theHTML' => view('profile-post-only', ['posts' => $profile->posts()->latest()->get()])->render(), 'doctitle' => $profile->fullname . "'s Profile"]);
+              }
               
         public function FollowersRaw (User $profile){
-              return response()->json(['theHTML' => view('profile-followers-only', ['followers' => $profile->followers()->latest()->get()])->render(), 'docTitle' => $profile->username . "'s Followers"]);
+              return response()->json(['theHTML' => view('profile-followers-only', ['followers' => $profile->followers()->latest()->get()])->render(), 'doctitle' => $profile->username . "'s Followers"]);
        }
         public function FollowedRaw (User $profile){
               return response()->json([
                      'theHTML' => view('profile-followed-only', ['followed'=> $profile->followed()->latest()->get()])->render(),
-                     'docTitle' => $profile->fullname."'s Followers"]);}
+                     'doctitle' => $profile->fullname."'s Followers"]);}
 
 
 
