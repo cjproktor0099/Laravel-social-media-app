@@ -29,7 +29,10 @@
           <a href="/profile/{{$sharedData['id']}}/followed" class="profile-nav-link nav-item nav-link {{ Request::segment(3) == "followed" ? "active" : "" }}">Following: {{$sharedData['countfollowers']}}</a>
         </div>
         
-        {{$slot}}
+     
+        <div class="profile-slot-content">
+          {{$slot}}
+        </div>
 
       </div>
   

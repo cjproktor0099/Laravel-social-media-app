@@ -56,7 +56,7 @@ Route::get('/profile/{profile}/followed',[UserController::class,"Followed"])->mi
 //User profile main page
 Route::get('/profile/{profile}/raw', [UserController::class, 'ProfileRaw']);
 Route::get('/profile/{profile}/followers/raw', [UserController::class, 'FollowersRaw']);
-Route::get('/profile/{profile}/following/raw', [UserController::class, 'FollowedRaw']);
+Route::get('/profile/{profile}/followed/raw', [UserController::class, 'FollowedRaw']);
 
 //Follow relate routes
 Route::post('/create-follow/{user:username}',[FollowController::class,"createFollow"])->middleware('loggedin');
