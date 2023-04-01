@@ -17,3 +17,13 @@ composer require pusher/pusher-php-server
 
 instal live chat in js 
 npm install laravel-echo pusher-js
+
+add softdeletes 
+php artisan make:migration add_soft_deletes_to_posts
+
+add to migration 
+  $table->softDeletes();
+  this will add column to table posts deleted_at
+
+add to cotroller 
+softDeletes()

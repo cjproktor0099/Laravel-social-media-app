@@ -106,7 +106,7 @@ private function getSharedData($profile){
         public function FollowedRaw (User $profile){
               return response()->json([
                      'theHTML' => view('profile-followed-only', ['followed'=> $profile->followed()->latest()->get()])->render(),
-                     'doctitle' => $profile->fullname."'s Followers"]);}
+                     'doctitle' => $profile->username."'s Followers"]);}
 
 
 
