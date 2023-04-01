@@ -97,7 +97,7 @@ private function getSharedData($profile){
 
        
        public function ProfileRaw (User $profile){
-              return response()->json(['theHTML' => view('profile-post-only', ['posts' => $profile->posts()->latest()->get()])->render(), 'doctitle' => $profile->fullname . "'s Profile"]);
+              return response()->json(['theHTML' => view('profile-post-only', ['posts' => $profile->posts()->latest()->get()])->render(), 'doctitle' => $profile->username . "'s Profile"]);
               }
               
         public function FollowersRaw (User $profile){
